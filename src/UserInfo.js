@@ -5,6 +5,10 @@ import CardContent from '@material-ui/core/CardContent';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import { deepOrange, deepPurple } from '@material-ui/core/colors';
+import Typography from '@material-ui/core/Typography';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import { blue } from '@material-ui/core/colors';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,8 +32,13 @@ function UserInfo(props) {
   return (
     <Card className="UserInfo" variant="outlined">
       <CardContent>
-        <Avatar className={classes.purple}>TB</Avatar>
-        {props.data.name}
+        <Avatar className={classes.purple}>TB</Avatar>{props.data.name}
+        <Typography variant="body2" color="textSecondary" component="p">
+            {props.data.bio}
+        </Typography>
+        <TwitterIcon style={{color: blue[500]}} />{props.data.twitter_username}<br></br>
+        <LocationOnIcon style={{color: blue[500]}} /> {props.data.location}
+
       </CardContent>
     </Card>
   )

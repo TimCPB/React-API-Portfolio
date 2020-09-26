@@ -6,8 +6,17 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      gitHubData: ''
+      gitHubUserData: {}
     }
+  }
+
+  componentDidMount() {
+    fetch("https://api.github.com/users/TimCPB")
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        this.setState({gitHubUserData: data})
+      })
   }
 
 render() {

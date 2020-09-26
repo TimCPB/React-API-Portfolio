@@ -27,11 +27,9 @@ render() {
       <Grid container spacing={3}>
         <Grid container item xs={12} spacing={3}>
         <Grid item xs={10}>
-          Hullo, world!
           <UserPhoto photo={this.state.gitHubUserData.avatar_url} />
         </Grid>
         <Grid item xs={2}>
-          
           <UserInfo data={this.state.gitHubUserData} />
         </Grid>
         </Grid>

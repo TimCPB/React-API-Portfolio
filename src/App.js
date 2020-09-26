@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react'
 import './App.css';
 import Grid from '@material-ui/core/Grid';
 
-function App() {
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      gitHubData: ''
+    }
+  }
+
+render() {
   return (
-    <div className="App">
+    <div className="AppStuff">
       <Grid container spacing={3}>
         <Grid item xs={9}>
           Hullo, world!
@@ -15,6 +23,6 @@ function App() {
       </Grid>
     </div>
   );
-}
+}}
 
 export default App;

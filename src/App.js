@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css';
 import Grid from '@material-ui/core/Grid';
+import UserPhoto from './UserPhoto'
 
 class App extends Component {
   constructor(props) {
@@ -23,11 +24,13 @@ render() {
   return (
     <div className="AppStuff">
       <Grid container spacing={3}>
-        <Grid item xs={9}>
+        <Grid item s={10}>
           Hullo, world!
+          <UserPhoto photo={this.state.gitHubUserData.avatar_url} />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={2}>
           Me again!
+          <UserPhoto photo={this.state.gitHubUserData.avatar_url} />
         </Grid>
       </Grid>
     </div>

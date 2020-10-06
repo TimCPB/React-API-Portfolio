@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactMarkdown from 'react-markdown'
 
 class Repo extends Component {
   constructor(props) {
@@ -23,8 +24,7 @@ class Repo extends Component {
   render() {
     return (
       <div>
-      Howdy y'all
-      {this.props.repoData}
+      <ReactMarkdown source={this.props.repoData} />
       </div>
     )
   }

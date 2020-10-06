@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './App.css';
-import parse from 'html-react-parser'
+// import parse from 'html-react-parser'
 
 import Grid from '@material-ui/core/Grid';
 import UserPhoto from './UserPhoto'
@@ -34,21 +34,18 @@ class App extends Component {
         console.log(this.state.starredRepoURLs)
       
       
-        this.state.starredRepoURLs.map(repoURL => 
-              fetch(repoURL)
-              .then(response => response.json())
-              .then(data => {
-                const htmlz = atob(data.content)
-                const htmlzz = parse(htmlz)
-                const htmlzzz = htmlzz.join(' ')
-                const htmlzzzz = htmlzzz.substr(0, 500)
-                this.state.starredRepoURLContent.push(htmlzzzz)
-                // console.log(this.state.starredRepoURLContent)
-                // console.log(data.content)
-                this.setState({starredRepoURLContent: this.state.starredRepoURLContent})
-              })
-
-          )
+        // this.state.starredRepoURLs.map(repoURL => 
+        //       fetch(repoURL)
+        //       .then(response => response.json())
+        //       .then(data => {
+        //         const htmlz = atob(data.content)
+        //         const htmlzz = parse(htmlz)
+        //         const htmlzzz = htmlzz.join(' ')
+        //         const htmlzzzz = htmlzzz.substr(0, 500)
+        //         this.state.starredRepoURLContent.push(htmlzzzz)
+        //         this.setState({starredRepoURLContent: this.state.starredRepoURLContent})
+        //       })
+        //   )
         }
       )
   }
@@ -63,7 +60,7 @@ render() {
         <Grid item xs={4}>
           <UserInfo data={this.state.gitHubUserData} />
         </Grid>
-        {this.state.starredRepoURLContent.map(content => 
+        {this.state.starredRepos.map(content => 
           <Grid item xs={4}>
           <Repo repoData={content} />
         </Grid>

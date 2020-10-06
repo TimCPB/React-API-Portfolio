@@ -45,6 +45,7 @@ class App extends Component {
                 this.state.starredRepoURLContent.push(htmlzzzz)
                 // console.log(this.state.starredRepoURLContent)
                 // console.log(data.content)
+                this.setState({starredRepoURLContent: this.state.starredRepoURLContent})
               })
 
           )

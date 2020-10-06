@@ -63,15 +63,11 @@ render() {
         <Grid item xs={4}>
           <UserInfo data={this.state.gitHubUserData} />
         </Grid>
-        <Grid item xs={4}>
-          <Repo repoData={this.state.starredRepoURLContent[0]} />
+        {this.state.starredRepoURLContent.map(content => 
+          <Grid item xs={4}>
+          <Repo repoData={content} />
         </Grid>
-        <Grid item xs={4}>
-          <Repo repoData={this.state.starredRepoURLContent[1]} />
-        </Grid>
-        <Grid item xs={4}>
-          <Repo repoData={this.state.starredRepoURLContent[2]} />
-        </Grid>
+        )}
       </Grid>
       
     </div>
